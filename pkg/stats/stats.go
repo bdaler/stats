@@ -5,12 +5,13 @@ import (
 )
 
 func Avg(payments []types.Payment) types.Money {
-	count := len(payments)
+	count := 0
 	sum := 0
 
-	for i := 0; i < count; i++ {
+	for i := 0; i < len(payments); i++ {
 		if payments[i].Status != types.StatusFail {
 			sum += int(payments[i].Amount)
+			count++
 		}
 	}
 	avg := sum / count
