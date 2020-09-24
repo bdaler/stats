@@ -13,7 +13,14 @@ func ExampleAvg() {
 	}
 	fmt.Println(Avg(payments))
 	//Output:
-	// 7
+	// 11
+}
+
+func ExampleTotalInCategory_empty() {
+	paymets := []types.Payment{}
+	fmt.Println(TotalInCategory(paymets, "U"))
+	//Output:
+	// 0
 }
 
 func ExampleTotalInCategory() {
