@@ -7,9 +7,9 @@ import (
 
 func ExampleAvg() {
 	payments := []types.Payment{
-		{1, 10, "T", "OK"},
-		{1, 11, "U", "FAIL"},
-		{1, 12, "R", "INPROGRESS"},
+		{1, 10, "T", types.StatusOk},
+		{1, 11, "U", types.StatusFail},
+		{1, 12, "R", types.StatusInProgress},
 	}
 	fmt.Println(Avg(payments))
 	//Output:
@@ -18,9 +18,9 @@ func ExampleAvg() {
 
 func ExampleTotalInCategory() {
 	payments := []types.Payment{
-		{1, 10, "T", "OK"},
-		{1, 11, "U", "FAIL"},
-		{1, 12, "R", "INPROGRESS"},
+		{1, 10, "T", types.StatusOk},
+		{1, 11, "U", types.StatusFail},
+		{1, 12, "R", types.StatusInProgress},
 	}
 	fmt.Println(TotalInCategory(payments, "U"))
 	//Output:
