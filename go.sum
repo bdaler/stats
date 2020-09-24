@@ -1,4 +1,2 @@
-github.com/bdaler/bank v0.0.0-20200918170546-eb60a567ff17 h1:eV2v+IcZiw8XFCR1ns9bktDIYxRJF+cqLNx8CcaYFJ4=
-github.com/bdaler/bank v0.0.0-20200918170546-eb60a567ff17/go.mod h1:Svu4pNUDiDOfZy0Toc/InEjYog7Y41zsJW7UvxoNoV8=
-github.com/bdaler/bank v0.0.0-20200924053930-96b80ee91b95 h1:qS9upiNpUn742Y8s9SY7AEJD8j8HGqsiwmN6OSwahdo=
-github.com/bdaler/bank v0.0.0-20200924053930-96b80ee91b95/go.mod h1:Svu4pNUDiDOfZy0Toc/InEjYog7Y41zsJW7UvxoNoV8=
+github.com/bdaler/bank/v2 v2.0.0 h1:ixBiNISJXnXKzUawUiBVAPu4zdPjEpHkVUmrq3yHJbM=
+github.com/bdaler/bank/v2 v2.0.0/go.mod h1:blZNU7RaoJJaVe0TmCDVXcaEFe3WubuzBIiCAQAHKPs=

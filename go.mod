@@ -1,5 +1,5 @@
-module github.com/bdaler/stats
+module github.com/bdaler/stats/v2
 
 go 1.15
 
-require github.com/bdaler/bank v0.0.0-20200924053930-96b80ee91b95
+require github.com/bdaler/bank/v2 v2.0.0

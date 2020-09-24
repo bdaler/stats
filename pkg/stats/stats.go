@@ -1,7 +1,7 @@
 package stats
 
 import (
-	"github.com/bdaler/bank/pkg/types"
+	"github.com/bdaler/bank/v2/pkg/types"
 )
 
 func Avg(payments []types.Payment) types.Money {
@@ -9,7 +9,9 @@ func Avg(payments []types.Payment) types.Money {
 	sum := 0
 
 	for i := 0; i < count; i++ {
-		sum += int(payments[i].Amount)
+		if payments[i].Status != types.StatusFail {
+			sum += int(payments[i].Amount)
+		}
 	}
 	avg := sum / count
 
@@ -20,7 +22,7 @@ func TotalInCategory(payments []types.Payment, category types.Category) types.Mo
 	sum := types.Money(0)
 
 	for _, payment := range payments {
-		if payment.Category == category {
+		if payment.Category == category && payment.Status != types.StatusFail {
 			sum += payment.Amount
 		}
 	}
