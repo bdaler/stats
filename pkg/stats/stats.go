@@ -5,7 +5,7 @@ import (
 )
 
 func Avg(payments []types.Payment) types.Money {
-	count := len(payments)
+	count := 0
 	sum := 0
 
 	for _, payment := range payments {
@@ -13,8 +13,9 @@ func Avg(payments []types.Payment) types.Money {
 			continue
 		}
 		sum += int(payment.Amount)
+		count++
 	}
-	avg := sum / (count - 1)
+	avg := sum / (count)
 
 	return types.Money(avg)
 }
@@ -31,4 +32,26 @@ func TotalInCategory(payments []types.Payment, category types.Category) types.Mo
 		}
 	}
 	return sum
+}
+
+func CategoriesAvg(payments []types.Payment) map[types.Category]types.Money {
+	result := make(map[types.Category]types.Money)
+	for _, payment := range payments {
+		if _, err := result[payment.Category]; err {
+			continue
+		}
+		filtered := PaymentByCategory(payments, payment.Category)
+		result[payment.Category] = Avg(filtered)
+	}
+	return result
+}
+
+func PaymentByCategory(payments []types.Payment, category types.Category) []types.Payment {
+	var filtered []types.Payment
+	for _, payment := range payments {
+		if payment.Category == category {
+			filtered = append(filtered, payment)
+		}
+	}
+	return filtered
 }
