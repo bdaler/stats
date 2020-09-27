@@ -55,3 +55,19 @@ func PaymentByCategory(payments []types.Payment, category types.Category) []type
 	}
 	return filtered
 }
+
+func PeriodsDynamic(first map[types.Category]types.Money, second map[types.Category]types.Money) map[types.Category]types.Money {
+	result := map[types.Category]types.Money{}
+
+	if len(first) >= len(second) {
+		for category := range first {
+			result[category] = second[category] - first[category]
+		}
+		return result
+	}
+
+	for category := range second {
+		result[category] = second[category] - first[category]
+	}
+	return result
+}
